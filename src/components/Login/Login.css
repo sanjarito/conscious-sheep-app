@@ -1,0 +1,68 @@
+p {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+p + p {
+  margin-top: 15px;
+}
+
+form {
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+label {
+  display: block;
+}
+.form-container{
+  width:75%;
+  margin:auto;
+}
+.form-section {
+  display: flex;
+justify-content: flex-end;
+padding: .5em;
+  justify-content: center;
+}
+
+.favor-type-explanation {
+  font-size: 14px;
+}
+
+.favor-entry {
+  min-height: 0;
+}
+
+.favor-entry header {
+  padding: 0;
+}
+
+.favor-entry header h3 {
+  margin: 0;
+}
+
+.favor-description {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.favor-stat {
+  color: blue;
+}
+
+#login-button {
+  display: block;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
