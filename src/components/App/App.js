@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Homepage from '../Homepage/Homepage'
 import Login from '../Login/Login'
 import Signup from '../Signup/Signup'
 import FavorsList from '../FavorsList/FavorsList'
+import FavorService from '../FavorService/FavorService'
+import Myaccount from '../Myaccount/Myaccount'
 import CreateFavor from '../CreateFavor/CreateFavor'
-import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
 import $ from "jquery"
 import './App.css'
@@ -29,19 +29,19 @@ class App extends Component {
         </header>
         <main className='App__main'>
           <Switch>
-          // This is the homepage route
+
             <Route
               exact
               path={'/'}
               component={Homepage}
             />
-            // This is the login route
+
             <Route
               exact
               path={'/login'}
               component={Login}
             />
-            // This is the signup route
+
             <Route
               exact
               path={'/signup'}
@@ -58,6 +58,18 @@ class App extends Component {
               exact
               path={'/createfavor'}
               component={CreateFavor}
+            />
+
+            <Route
+              exact
+              path={'/favorservice'}
+              component={FavorService}
+            />
+
+            <Route
+              exact
+              path={'/myaccount'}
+              component={Myaccount}
             />
           </Switch>
         </main>

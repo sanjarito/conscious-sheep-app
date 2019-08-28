@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import $ from "jquery"
 import './FavorsList.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,7 +21,7 @@ export default class FavorsList extends Component {
         <header>
             <h2>Favor # 1 Title</h2>
             <p>Date Posted</p>
-            <a onClick={this.handleClick} class="nav-links"><FontAwesomeIcon icon={faPlus} /></a>
+            <button onClick={this.handleClick} class="nav-links"><FontAwesomeIcon icon={faPlus} /></button>
         </header>
         <div class="favor-description">
         <blockquote> Favor Description - Praesent sagittis a mi sit amet dictum. Donec orci nibh, dignissim in leo et, congue semper mauris. </blockquote>
