@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
+import config from '../../config'
 // import { Link } from 'react-router-dom'
 import './Homepage.css'
 
 
 export default class Homepage extends Component {
 
+  state = {
+    data: [],
+    error:null,
+  };
+
+  setData = data => {
+    this.setState({
+      data,
+      error: null,
+    })
+  }
+
+
   componentDidMount() {
+
+    console.log(config.API_ENDPOINT)
 
 fetch(config.API_ENDPOINT, {
   method: 'GET',
@@ -19,7 +35,9 @@ fetch(config.API_ENDPOINT, {
       return res.json().then(error => Promise.reject(error))
     }
     return res.json()
+    console.log(res)
   })
+  .then(this.setData)
   .catch(error => {
     console.error(error)
     this.setState({ error })
