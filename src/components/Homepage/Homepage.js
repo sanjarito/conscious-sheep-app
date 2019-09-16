@@ -5,26 +5,14 @@ import './Homepage.css'
 
 
 export default class Homepage extends Component {
-  //
-  // state = {
-  //
-  //   error:null,
-  // };
-  //
-  // setData = data => {
-  //   this.setState({
-  //     data,
-  //     error: null,
-  //   })
-  // }
 
 
   componentDidMount() {
 
 }
 
-
   render() {
+
     return (
 
       <main role="main">
@@ -32,6 +20,8 @@ export default class Homepage extends Component {
               <h1>Join the conscioussheep  </h1>
               <h3>A community based on asking and returning favors</h3>
           </header>
+          <h1>{config.API_BASE_URL}</h1>
+
 
           <section>
              <p> If the means through which people become rich could be directly correlated to how much they help others...
