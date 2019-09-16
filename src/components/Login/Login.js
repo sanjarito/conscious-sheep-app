@@ -10,15 +10,15 @@ export default class Header extends Component {
          <h1>Login</h1>
        </header>
        <section>
-       <div class="form-container">
+       <div className="form-container">
          <form id="new-user">
-           <div class="form-section">
-             <label for="user-name">Username:</label>
+           <div className="form-section">
+             <label htmlFor="user-name">Username:</label>
              <input type="text" name="username" placeholder="tiagon89" required />
            </div>
 
-            <div class="form-section">
-             <label for="user-password">Password:</label>
+            <div className="form-section">
+             <label htmlFor="user-password">Password:</label>
              <input type="text" name="username" placeholder="tiagon89" required />
            </div>
            <button id="login-button" type="submit">Submit</button>

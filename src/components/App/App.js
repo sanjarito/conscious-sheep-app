@@ -9,13 +9,41 @@ import FavorService from '../FavorService/FavorService'
 import Myaccount from '../Myaccount/Myaccount'
 import CreateFavor from '../CreateFavor/CreateFavor'
 import { Route, Switch } from 'react-router-dom'
-import $ from "jquery"
+import config from '../../config'
+// import $ from "jquery"
 import './App.css'
 
 class App extends Component {
+  state = {
+  favors: [],
+  error: null
+};
+
+setFavors = favors => {
+  this.setState({
+    favors,
+    error: null,
+  })
+}
 
   componentDidMount() {
-
+    fetch(config.API_ENDPOINT, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
+    .then(res => {
+      if (!res.ok) {
+        return res.json().then(error => Promise.reject(error))
+      }
+      console.log(res)
+      return res.json()
+    })
+    .then(this.setFavors)
+    .catch(error => {
+      console.error(error)
+    })
   }
 
   componentWillUnmount() {
@@ -33,8 +61,16 @@ class App extends Component {
             <Route
               exact
               path={'/'}
-              component={Homepage}
+              render={routeProps => {
+              const favors = this.state.favors
+            return (
+            <Homepage
+              favors={favors}
+              {...routeProps}
             />
+          )
+          }}
+          />
 
             <Route
               exact

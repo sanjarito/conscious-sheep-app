@@ -11,23 +11,23 @@ export default class Header extends Component {
       </header>
       <section>
         <form id="new-user">
-          <div class="form-section">
-            <label for="user-name">Username:</label>
+          <div className="form-section">
+            <label htmlFor="user-name">Username:</label>
             <input type="text" name="username" placeholder="tiagon89" required />
           </div>
 
-           <div class="form-section">
-            <label for="user-password">Password:</label>
+           <div className="form-section">
+            <label htmlFor="user-password">Password:</label>
             <input type="text" name="username" placeholder="tiagon89" required />
           </div>
 
-          <div class="form-section">
-            <label for="user-zipcode">Zipcode:</label>
+          <div className="form-section">
+            <label htmlFor="user-zipcode">Zipcode:</label>
             <input type="number" name="zipcode" placeholder="46077" required />
           </div>
 
-          <div class="form-section">
-            <label for="about-me">About Me</label>
+          <div className="form-section">
+            <label htmlFor="about-me">About Me</label>
             <textarea name="about-me" rows="10"   required></textarea>
           </div>
 

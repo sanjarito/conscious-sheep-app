@@ -11,43 +11,43 @@ export default class CreateFavor extends Component {
         </header>
         <section>
           <form id="new-favor">
-            <div class="form-section">
-              <label for="favor-title">Favor title</label>
+            <div className="form-section">
+              <label htmlFor="favor-title">Favor title</label>
               <input type="text" name="favor-title" placeholder="Plant Flowers" required />
             </div>
-            <div class="form-section">
-              <label for="favor-summary">Favor Summary</label>
+            <div className="form-section">
+              <label htmlFor="favor-summary">Favor Summary</label>
               <textarea name="favor-summary" rows="15"   required></textarea>
             </div>
-            <div class="approximate-hours-container" class="form-section">
-              <label for="hours">Approximate # hours required</label>
+            <div className="approximate-hours-container form-section">
+              <label htmlFor="hours">Approximate # hours required</label>
               <input type="number" name="hours-requested" placeholder="8" />
             </div>
-            <div class="form-section">
+            <div className="form-section">
               <h1>Select favor type</h1>
 
 
-              <label for="favor-type">
+              <label htmlFor="favor-type">
                 <span>Physical Favor</span>
-                <div class="favor-type-explanation">These are any favors that require a phyisical effort to accomplish the goal.</div>
+                <div className="favor-type-explanation">These are any favors that require a phyisical effort to accomplish the goal.</div>
               </label>
 
-              <input type="radio" name="favor-type" value="1" class="favor-type-radio" />
-              <label for="favor-type">
+              <input type="radio" name="favor-type" value="1" className="favor-type-radio" />
+              <label htmlFor="favor-type">
                 <span>Borrowing Items Favor</span>
-                <div class="favor-type-explanation">A favor to borrow a material item</div>
+                <div className="favor-type-explanation">A favor to borrow a material item</div>
               </label>
 
-              <input type="radio" name="favor-type" value="2" class="favor-type-radio" />
-              <label for="favor-type">
+              <input type="radio" name="favor-type" value="2" className="favor-type-radio" />
+              <label htmlFor="favor-type">
                 <span>Intellectual Favor</span>
-                <div class="favor-type-explanation">Any favor that does not require physical labor but instead it is itellectual. These might include questions, lessons, suggestions, and sharing of expertise.</div>
+                <div className="favor-type-explanation">Any favor that does not require physical labor but instead it is itellectual. These might include questions, lessons, suggestions, and sharing of expertise.</div>
               </label>
 
-              <input type="radio" name="favor-type" value="3" class="favor-type-radio" />
-              <label for="favor-type">
+              <input type="radio" name="favor-type" value="3" className="favor-type-radio" />
+              <label htmlFor="favor-type">
                 <span>Emotional Favor</span>
-                <div class="favor-type-explanation">A favor request for emotional support.</div>
+                <div className="favor-type-explanation">A favor request for emotional support.</div>
               </label>
 
 
