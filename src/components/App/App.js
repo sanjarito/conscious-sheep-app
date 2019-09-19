@@ -37,12 +37,12 @@ setFavors = favors => {
       if (!res.ok) {
         return res.json().then(error => Promise.reject(error))
       }
-      console.log(res)
       return res.json()
     })
     .then(this.setFavors)
     .catch(error => {
-      console.error(error)
+      console.log(error)
+      this.setState({ error })
     })
   }
 

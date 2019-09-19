@@ -20,8 +20,7 @@ export default class Homepage extends Component {
               <h1>Join the conscioussheep  </h1>
               <h3>A community based on asking and returning favors</h3>
           </header>
-          <h1>{config.API_BASE_URL}</h1>
-          <h2>helloooo</h2>mi
+          
 
 
           <section>
