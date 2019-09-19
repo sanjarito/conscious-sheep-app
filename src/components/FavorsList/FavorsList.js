@@ -10,7 +10,8 @@ export default class FavorsList extends Component {
   handleClick = () => {
       $('.favor-description').toggle()
     }
-  render() {
+  render(props) {
+    let favors = this.props.favors
     return (
       <main role="main">
       <header role="banner">
@@ -18,7 +19,7 @@ export default class FavorsList extends Component {
       </header>
       <section>
         <header>
-            <h2>Favor # 1 Title</h2>
+            <h2>{favors[0].title}</h2>
             <p>Date Posted</p>
             <button onClick={this.handleClick} className="nav-links"><FontAwesomeIcon icon={faPlus} /></button>
         </header>

@@ -87,7 +87,15 @@ setFavors = favors => {
             <Route
               exact
               path={'/favors'}
-              component={FavorsList}
+              render={routeProps => {
+              const favors = this.state.favors
+            return (
+            <FavorsList
+              favors={favors}
+              {...routeProps}
+            />
+          )
+          }}
             />
 
             <Route
