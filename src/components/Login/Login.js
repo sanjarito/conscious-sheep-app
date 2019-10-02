@@ -1,31 +1,70 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
-import './Login.css'
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
+import { Button, Input } from '../Utils/Utils'
 
-export default class Header extends Component {
-    render() {
-      return (
-        <main role="main">
-       <header>
-         <h1>Login</h1>
-       </header>
-       <section>
-       <div className="form-container">
-         <form id="new-user">
-           <div className="form-section">
-             <label htmlFor="user-name">Username:</label>
-             <input type="text" name="username" placeholder="tiagon89" required />
-           </div>
+export default class LoginForm extends Component {
+  static defaultProps = {
+    onLoginSuccess: () => {console.log('login has been succesful')}
+  }
 
-            <div className="form-section">
-             <label htmlFor="user-password">Password:</label>
-             <input type="text" name="username" placeholder="tiagon89" required />
-           </div>
-           <button id="login-button" type="submit">Submit</button>
-         </form>
-         </div>
-       </section>
-     </main>
-     )
-   }
+  state = { error: null }
+
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault()
+    this.setState({ error: null })
+    const { user_name, password } = ev.target
+
+    AuthApiService.postLogin({
+      user_email: user_name.value,
+      user_password: password.value,
+    })
+      .then(res => {
+        user_name.value = ''
+        password.value = ''
+        TokenService.saveAuthToken(res.authToken)
+        this.props.onLoginSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
+
+  render() {
+    const { error } = this.state
+    return (
+      <form
+        className='LoginForm'
+        onSubmit={this.handleSubmitJwtAuth}
+      >
+        <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
+        <div className='user_name'>
+          <label htmlFor='LoginForm__user_name'>
+            User name
+          </label>
+          <Input
+            required
+            name='user_name'
+            id='LoginForm__user_name'>
+          </Input>
+        </div>
+        <div className='password'>
+          <label htmlFor='LoginForm__password'>
+            Password
+          </label>
+          <Input
+            required
+            name='password'
+            type='password'
+            id='LoginForm__password'>
+          </Input>
+        </div>
+        <Button type='submit'>
+          Login
+        </Button>
+      </form>
+    )
+  }
 }
