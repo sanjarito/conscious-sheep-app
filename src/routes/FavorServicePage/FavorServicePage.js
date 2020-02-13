@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-import './FavorService.css'
+import './FavorServicePage.css'
 
-export default class FavorService extends Component {
+export default class FavorServicePage extends Component {
     render() {
       return (
         <main role="main">

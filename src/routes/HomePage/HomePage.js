@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import config from '../../config'
 // import { Link } from 'react-router-dom'
-import './Homepage.css'
+import './HomePage.css'
 
 
-export default class Homepage extends Component {
+export default class HomePage extends Component {
 
 
   componentDidMount() {
@@ -20,7 +20,7 @@ export default class Homepage extends Component {
               <h1>Join the conscioussheep  </h1>
               <h3>A community based on asking and returning favors</h3>
           </header>
-          
+
 
 
           <section>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-import './CreateFavor.css'
+import './CreateFavorPage.css'
 
-export default class CreateFavor extends Component {
+export default class CreateFavorPage extends Component {
     render() {
       return (
         <main role="main">

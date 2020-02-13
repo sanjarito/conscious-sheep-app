@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-import './Signup.css'
+import './RegistrationPage.css'
 
-export default class Header extends Component {
+export default class RegistrationPage extends Component {
     render() {
       return (
       <main role="main">
